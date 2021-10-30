@@ -16,9 +16,19 @@ public class A {
    }
 
    // TODO: Your answer
-   // ? extractedMethod(?) {
-   //
-   // }
+   Object contains(List<Object> list, String p) {
+	   for (Object obj : list) {
+		   try {
+			   if (((Node)obj).contains(p) ||
+					   ((Edge)obj).contains(p)) {
+				   System.out.println(obj);
+			   }
+		   } catch (ClassCastException e){
+			   e.printStackTrace();
+		   }
+	   }
+	   return null;
+   }
 }
 
 class Node {
