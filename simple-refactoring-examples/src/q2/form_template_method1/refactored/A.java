@@ -21,7 +21,7 @@ abstract class Template {
       int sum = 0;
       // TODO: Replace the FOR statement below with your answer.
       for (int i = min; i <= max; i++) {
-    	  sum += this.apply(i);
+    	  sum += apply(i);
       }
       return sum;
    }
