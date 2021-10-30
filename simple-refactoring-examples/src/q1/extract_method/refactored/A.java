@@ -16,33 +16,28 @@ public class A {
    }
 
    // TODO: Your answer
-   Object contains(List list, String p) {
-	   for (Object obj : list) {
-		   try {
-			   if ((obj instanceof Node && ((Node)obj).contains(p)) ||
-					   (obj instanceof Edge && ((Edge)obj).contains(p))) {
-				   System.out.println(obj);
-			   }
-		   } catch (ClassCastException e){
-			   e.printStackTrace();
+   <T extends Graph> Object contains(List<T> list, String p) {
+	   for (T obj : list) {
+		   if (obj.contains(p)) {
+			   System.out.println(obj);
 		   }
 	   }
 	   return null;
    }
 }
 
-class Node {
-   String name;
+class Graph {
+	String name;
 
    public boolean contains(String p) {
       return name.contains(p);
    }
 }
 
-class Edge {
-   String name;
+class Node extends Graph {
+   
+}
 
-   public boolean contains(String p) {
-       return name.contains(p);
-   }
+class Edge extends Graph {
+   
 }
