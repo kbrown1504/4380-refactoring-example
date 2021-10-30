@@ -5,22 +5,22 @@ import java.util.List;
 public class A {
    Node m1(List<Node> nodes, String p) {
       // TODO: Your answer
-      // other implementation
+      contains(nodes, p);
       return null;
    }
 
    Edge m2(List<Edge> edgeList, String p) {
       // TODO: Your answer
-      // other implementation
+      contains(edgeList, p);
       return null;
    }
 
    // TODO: Your answer
-   Object contains(List<Object> list, String p) {
+   Object contains(List list, String p) {
 	   for (Object obj : list) {
 		   try {
-			   if (((Node)obj).contains(p) ||
-					   ((Edge)obj).contains(p)) {
+			   if ((obj instanceof Node && ((Node)obj).contains(p)) ||
+					   (obj instanceof Edge && ((Edge)obj).contains(p))) {
 				   System.out.println(obj);
 			   }
 		   } catch (ClassCastException e){
